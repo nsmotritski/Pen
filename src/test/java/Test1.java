@@ -1,16 +1,21 @@
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Test1 {
 
-        @Test()
-        public void testEmailGenerator() {
+      /*  @Test()
+        public void testPenWithoutParamentersCanBeCreated() {
 
-            Pen obj = new Pen();
-            String email = obj.generate();
+            Assert.assertTrue(isInstance(Pen(), Pen));
 
-            Assert.assertNotNull(email);
-            Assert.assertEquals(email, "feedback@yoursite.com");
+        }*/
+
+        @Test
+        @Parameters("myName")
+        public void testPenWithoutParametersCanBeCreated() {
+
+        Assert.assertTrue(true);
 
         }
 

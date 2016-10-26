@@ -13,10 +13,9 @@ public class Test1 {
 
         @Test
         @Parameters("myName")
-        public void testPenWithoutParametersCanBeCreated() {
-
-        Assert.assertTrue(true);
-
+        public void testWriteWord(String myName) {
+            Pen mypen = new Pen(100,1.1,"BLUE");
+            Assert.assertTrue(mypen.write(myName)== myName);
         }
 
 }

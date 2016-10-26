@@ -3,12 +3,37 @@
 
 <suite name="Suite1">
    <test name="test1">
-   
-      <parameter name="myName" value="manisha"/> 
-      
+      <parameter name="myName" value="manishatestlongstring"/>
+      <parameter name="inkContainerValue" value="10"/>
+      <parameter name="sizeLetter" value="2"/>
+      <parameter name="color" value="blue"/>
       <classes>
          <class name="Test1" />
       </classes>
-      
+   </test>
+   <test name="test2">
+      <parameter name="myName" value="nick"/>
+      <parameter name="inkContainerValue" value="100"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value="red"/>
+      <classes>
+         <class name="Test1" />
+      </classes>
+   </test>
+   <test name="test3">
+      <parameter name="inkContainerValue" value="10"/>
+      <parameter name="sizeLetter" value="2"/>
+      <parameter name="color" value="BLUE"/>
+      <classes>
+         <class name="Test2" />
+      </classes>
+   </test>
+   <test name="test4">
+      <parameter name="inkContainerValue" value="100"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value="RED"/>
+      <classes>
+         <class name="Test2" />
+      </classes>
    </test>
 </suite>

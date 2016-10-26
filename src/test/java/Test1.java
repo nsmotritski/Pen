@@ -4,18 +4,17 @@ import org.testng.annotations.Test;
 
 public class Test1 {
 
-      /*  @Test()
-        public void testPenWithoutParamentersCanBeCreated() {
-
-            Assert.assertTrue(isInstance(Pen(), Pen));
-
-        }*/
-
+        //Validate that it is possible write a word or a part of word with the Pen
         @Test
-        @Parameters("myName")
-        public void testWriteWord(String myName) {
-            Pen mypen = new Pen(100,1.1,"BLUE");
-            Assert.assertTrue(mypen.write(myName)== myName);
+        @Parameters({"myName","inkContainerValue","sizeLetter","color"})
+        public void testWriteWord(String myName,int inkContainerValue,double sizeLetter,String color) {
+            Pen mypen = new Pen(inkContainerValue,sizeLetter,color);
+            double sizeOfWord = myName.length()*sizeLetter;
+            String partOfWord = myName;
+            if (inkContainerValue<sizeOfWord) {
+                partOfWord = myName.substring(0, inkContainerValue);
+            }
+            Assert.assertEquals(mypen.write(myName),partOfWord);
         }
 
 }

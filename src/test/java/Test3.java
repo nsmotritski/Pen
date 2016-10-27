@@ -4,11 +4,10 @@ import org.testng.annotations.Test;
 
 public class Test3 {
 
-        //Validate that in case there is not enough
+        //Validate that a Pen can be created with specific parameters
         @Test
-        @Parameters({"myName","inkContainerValue","sizeLetter","color"})
-        public void testWriteWord(String myName,int inkContainerValue,double sizeLetter,String color) {
-            Pen mypen = new Pen(inkContainerValue,sizeLetter,color);
-            Assert.assertEquals(mypen.write(myName),myName);
+        @Parameters({"inkContainerValue","sizeLetter","color","expected"})
+        public void testPenCreated(int inkContainerValue,double sizeLetter,String color,boolean expected) {
+            Assert.assertEquals((new Pen(inkContainerValue,sizeLetter,color)instanceof Pen),expected);
         }
 }

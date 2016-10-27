@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1">
-   <test name="test1">
+<suite name="Pen tests">
+   <test name="Check  that if not enough ink to write a word due to sizeLetter, then part of word is written">
       <parameter name="myName" value="manishatestlongstring"/>
       <parameter name="inkContainerValue" value="10"/>
       <parameter name="sizeLetter" value="2"/>
-      <parameter name="color" value="blue"/>
+      <parameter name="expected" value="manis"/>
       <classes>
          <class name="Test1" />
       </classes>
    </test>
-   <test name="test2">
-      <parameter name="myName" value="nick"/>
-      <parameter name="inkContainerValue" value="100"/>
+   <test name="Check  that if not enough ink to write a word due to inkContainerValue, then part of word is written">
+      <parameter name="myName" value="manishatestlongstring"/>
+      <parameter name="inkContainerValue" value="10"/>
       <parameter name="sizeLetter" value="1"/>
-      <parameter name="color" value="red"/>
+      <parameter name="expected" value="manishates"/>
       <classes>
          <class name="Test1" />
       </classes>
    </test>
-   <test name="test3">
+   <test name="Check that if there's enough ink to write a word, then the whole word is written">
+      <parameter name="myName" value="test"/>
+      <parameter name="inkContainerValue" value="4"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="expected" value="test"/>
+      <classes>
+         <class name="Test1" />
+      </classes>
+   </test>
+   <test name="Check that the ink is not used to write spaces">
+      <parameter name="myName" value="te     st"/>
+      <parameter name="inkContainerValue" value="4"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="expected" value="te     st"/>
+      <classes>
+         <class name="Test1" />
+      </classes>
+   </test>
+   <test name="Check that if BLUE color is set for the pen, then the pen color is BLUE">
       <parameter name="inkContainerValue" value="10"/>
       <parameter name="sizeLetter" value="2"/>
       <parameter name="color" value="BLUE"/>
@@ -28,12 +46,44 @@
          <class name="Test2" />
       </classes>
    </test>
-   <test name="test4">
+   <test name="Check that if RED color is set for the pen, then the pen color is RED">
       <parameter name="inkContainerValue" value="100"/>
       <parameter name="sizeLetter" value="1"/>
       <parameter name="color" value="RED"/>
       <classes>
          <class name="Test2" />
+      </classes>
+   </test>
+   <test name="Check that a Pen can be created with valid values of the parameters">
+      <parameter name="inkContainerValue" value="100"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value="RED"/>
+      <parameter name="expected" value="true"/>
+      <classes>
+         <class name="Test3" />
+      </classes>
+   </test>
+   <test name="Check that a Pen cannot be created with invalid (negative) value of inkContainerValue parameter">
+      <parameter name="inkContainerValue" value="-15"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value="RED"/>
+      <parameter name="expected" value="false"/>
+      <classes>
+         <class name="Test3" />
+      </classes>
+   </test>
+   <test name="Check that if a pen has positive inkContainerValue, then the Pen is working">
+      <parameter name="inkContainerValue" value="1"/>
+      <parameter name="expected" value="true"/>
+      <classes>
+         <class name="Test4" />
+      </classes>
+   </test>
+   <test name="Check that if a pen has zero inkContainerValue, then the Pen is not working">
+      <parameter name="inkContainerValue" value="0"/>
+      <parameter name="expected" value="false"/>
+      <classes>
+         <class name="Test4" />
       </classes>
    </test>
 </suite>

@@ -72,6 +72,24 @@
          <class name="Test3" />
       </classes>
    </test>
+   <test name="Check that a Pen cannot be created with invalid (negative) value of sizeLetter parameter">
+      <parameter name="inkContainerValue" value="15"/>
+      <parameter name="sizeLetter" value="-1"/>
+      <parameter name="color" value="RED"/>
+      <parameter name="expected" value="false"/>
+      <classes>
+         <class name="Test3" />
+      </classes>
+   </test>
+   <test name="Check that a Pen cannot be created with invalid (empty) value of Color parameter">
+      <parameter name="inkContainerValue" value="15"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value=""/>
+      <parameter name="expected" value="false"/>
+      <classes>
+         <class name="Test3" />
+      </classes>
+   </test>
    <test name="Check that if a pen has positive inkContainerValue, then the Pen is working">
       <parameter name="inkContainerValue" value="1"/>
       <parameter name="expected" value="true"/>
@@ -84,6 +102,14 @@
       <parameter name="expected" value="false"/>
       <classes>
          <class name="Test4" />
+      </classes>
+   </test>
+   <test name="Check if doSomethingElse method prints not empty String">
+      <parameter name="inkContainerValue" value="1"/>
+      <parameter name="sizeLetter" value="1"/>
+      <parameter name="color" value="GREEN"/>
+      <classes>
+         <class name="Test5" />
       </classes>
    </test>
 </suite>

@@ -8,8 +8,8 @@ public class Test2 {
     @Test
     @Parameters({"inkContainerValue","sizeLetter","color"})
     public void testFindOutColor(int inkContainerValue,double sizeLetter,String color) {
-        Pen mypen = new Pen(inkContainerValue,sizeLetter,color);
-        Assert.assertEquals(mypen.getColor(),color);
+        Pen myPen = new Pen(inkContainerValue,sizeLetter,color);
+        Assert.assertEquals(myPen.getColor(),color);
     }
 
 }

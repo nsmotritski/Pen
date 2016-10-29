@@ -8,8 +8,8 @@ public class Test1 {
         @Test
         @Parameters({"myName","inkContainerValue","sizeLetter","expected"})
         public void testWriteWord(String myName,int inkContainerValue,double sizeLetter,String expected) {
-            Pen mypen = new Pen(inkContainerValue,sizeLetter);
-            Assert.assertEquals(mypen.write(myName),expected);
+            Pen myPen = new Pen(inkContainerValue,sizeLetter);
+            Assert.assertEquals(myPen.write(myName),expected);
         }
 
 }
